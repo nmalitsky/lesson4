@@ -8,9 +8,9 @@ const TransformClass = class TransformClass extends stream.Transform {
 	}
 
 	_transform (chunk, enc, cb) {
-		var buffer = (Buffer.isBuffer(chunk)) ?  String(Number(chunk) * 2) : new Buffer(String(Number(chunk) * 2), enc);
-		this.push(buffer);
-		cb();
+		setTimeout(() => { 
+			this.push(String(Number(chunk) * 2)); cb(); }, 
+		1000);
 	};
 
 }
