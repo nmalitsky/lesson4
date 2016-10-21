@@ -7,7 +7,7 @@ const WritableClass = class WritableClass extends stream.Writable {
 	}
 
 	_write(chunk, enc, cb) {
-		console.log(chunk);
+		console.log(String(chunk));
 		cb();
 	}
 
