@@ -15,7 +15,7 @@ const TransformClass = class TransformClass extends stream.Transform {
 		1000);
 		*/
 
-		this.buffer.push(String(Number(chunk) *2));
+		this.buffer.push(Number(chunk) * 2);
 
 		let currTime = new Date().getTime();
 		if(currTime - this.pushTime >= 1000) {
