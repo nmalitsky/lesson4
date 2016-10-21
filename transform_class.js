@@ -26,6 +26,13 @@ const TransformClass = class TransformClass extends stream.Transform {
 		cb();
 	};
 
+	_flush (cb) {
+  		this.push(this.buffer.join());
+		this.buffer = [];
+  		cb();
+	};
+
+
 }
 
 module.exports = TransformClass;
